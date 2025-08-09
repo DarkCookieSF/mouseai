@@ -1,15 +1,16 @@
 import random
 import time
-
 import pyautogui
+import pydirectinput
 
 pyautogui.FAILSAFE = False
+pydirectinput.FAILSAFE = False
 
 while True:
     doMove = random.randint(0, 1)
 
     if doMove == 1:
-        pyautogui.moveTo(random.randint(0, 1920), random.randint(0, 1080), random.randint(0, 2))
+        pydirectinput.moveTo(random.randint(0, 1920), random.randint(0, 1080), random.randint(0, 2))
 
     doDrag = random.randint(0, 1)
 
@@ -23,17 +24,17 @@ while True:
         clickAmount = random.randint(0, 2)
 
         if lMOrR == 0:
-            pyautogui.leftClick()
+            pydirectinput.leftClick()
             if clickAmount == 1:
-                pyautogui.doubleClick()
+                pydirectinput.doubleClick()
             elif clickAmount == 2:
-                pyautogui.tripleClick()
+                pydirectinput.tripleClick()
             else:
                 time.sleep(0)
         elif lMOrR == 1:
-            pyautogui.middleClick()
+            pydirectinput.middleClick()
         else:
-            pyautogui.rightClick()
+            pydirectinput.rightClick()
 
     doScroll = random.randint(0, 1)
 
