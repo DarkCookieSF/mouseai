@@ -7,14 +7,15 @@ import pyttsx3
 import os
 import cv2
 from tkinter import messagebox
+from PIL import Image
 
 tts = pyttsx3.init()
 
 pyautogui.FAILSAFE = False
 pydirectinput.FAILSAFE = False
 
-notes = ["subscribe", "PEAK", "PEAK is fun", "I probably just died", "I just died", "@MysticFlameYT", "@RealTeeBe", "Thanks to @RealTeeBe for making this code", "Oh No!", "like the video", "gamers", "gaming", "shameless plug (@RealTeeBe)"]
-voicemessages = ["subscribe", "like", "make sure to check out @RealTeeBe", "when you shamelessly plug your channel in a video with a text to speech voice, @RealTeeBe", "you're probably gonna die", "hi mystic", "hi", "hello", "*vine boom*", "im always watching by the ways", "peak video", "l video", "peak", "peak is fun", "when is portal video number 14 coming out", "you make too many portal videos", "github.com/darkcookiesf", "w video", "im just here to annoy you", "lol", "haha", "why", "i am rapidly approaching your exact location", "tea be was gonna add a random webcam pop-up but deemed it too mean", "this is not a virus i swear", os.getlogin(), "did you ever have an annoying sibling as a kid", "fear me", "whats 1+1", "what", "what if i said your home location right now? i wont by the ways, winky face"]
+notes = ["subscribe", "PEAK", "PEAK is fun", "I probably just died", "I just died", "@MysticFlameYT", "@Nontzit", "Thanks to @Nontzit for making this code", "Oh No!", "like the video", "gamers", "gaming", "shameless plug (@Nontzit)"]
+voicemessages = ["subscribe", "like", "make sure to check out @Nontzit", "when you shamelessly plug your channel in a video with a text to speech voice, @Nontzit", "you're probably gonna die", "hi mystic", "hi", "hello", "*vine boom*", "im always watching by the ways", "peak video", "l video", "peak", "peak is fun", "when is portal video number 14 coming out", "you make too many portal videos", "github.com/darkcookiesf", "w video", "im just here to annoy you", "lol", "haha", "why", "i am rapidly approaching your exact location", "Nontzit was gonna add a random webcam pop-up but deemed it too mean", "this is not a virus i swear", "did you ever have an annoying sibling as a kid", "fear me", "whats 1+1", "what", "what if i said your home location right now? i wont by the ways, winky face"]
 
 def window():
     givenNote = random.choice(notes)
@@ -40,17 +41,17 @@ input("Rule 4. (Try) to have fun! (After you click enter, this script will start
 
 
 while True:
-    doMove = random.randint(0, 1)
+    doMove = random.randint(0, 3)
 
     if doMove == 1:
         pydirectinput.moveTo(random.randint(0, 1920), random.randint(0, 1080), random.randint(0, 2))
 
-    doDrag = random.randint(0, 1)
+    doDrag = random.randint(0, 3)
 
     if doDrag == 1:
         pyautogui.dragTo(random.randint(0, 1920), random.randint(0, 1080), random.randint(0, 2))
 
-    doClick = random.randint(0, 1)
+    doClick = random.randint(0, 3)
 
     if doClick == 1:
         lMOrR = random.randint(0, 2)
@@ -69,25 +70,25 @@ while True:
         else:
             pydirectinput.rightClick()
 
-    doScroll = random.randint(0, 1)
+    doScroll = random.randint(0, 4)
 
     if doScroll == 1:
         pyautogui.scroll(0)
 
-    doRun = random.randint(0, 1)
+    doRun = random.randint(0, 3)
 
     if doRun == 1:
         pydirectinput.keyDown("shift")
-        time.sleep(random.randint(1, 30))
+        time.sleep(random.randint(1, 5))
         pydirectinput.keyUp("shift")
 
-    doDrop = random.randint(0,1)
+    doDrop = random.randint(0,3)
 
     if doDrop == 1:
         pydirectinput.press(str(random.randint(1,4)))
         pydirectinput.press("q")
 
-    doThrow = random.randint(0,1)
+    doThrow = random.randint(0,3)
 
     if doThrow == 1:
         pydirectinput.press(str(random.randint(1,4)))
@@ -95,21 +96,21 @@ while True:
         time.sleep(random.randint(1,3))
         pydirectinput.keyUp("q")
 
-    doNoClimb = random.randint(0, 1)
+    doNoClimb = random.randint(0, 3)
 
     if doNoClimb == 1:
-        for i in range(random.randint(26, 260)):
-            pydirectinput.click("left")
+        for i in range(26):
+            pydirectinput.click()
             time.sleep(0.2)
 
-    doRagdoll = random.randint(0,1)
+    doRagdoll = random.randint(0,3)
 
     if doRagdoll == 1:
         pydirectinput.keyDown("r")
         pydirectinput.move(0, 100)
         pydirectinput.keyUp("r")
 
-    doMoveKeys = random.randint(0, 1)
+    doMoveKeys = random.randint(0, 3)
 
     if doMoveKeys == 1:
         num = random.randint(1,4)
@@ -132,7 +133,7 @@ while True:
                 time.sleep(random.randint(0,5))
                 pydirectinput.keyUp("d")
 
-    doPopup = random.randint(0, 1)
+    doPopup = random.randint(0, 3)
 
     if doPopup == 1:
         givenNote = random.choice(notes)
@@ -147,67 +148,43 @@ while True:
             case 4:
                 messagebox.askquestion("Annoying Popup", givenNote)
 
-    doPrompt = random.randint(0,1)
+    doPrompt = random.randint(0,3)
 
     if doPrompt == 1:
         window()
 
-    doExit = random.randint(0,1)
+    doExit = random.randint(0,3)
 
     if doExit == 1:
         pydirectinput.press("esc")
 
-    doNotepad = random.randint(0,1)
+    doNotepad = random.randint(0,4)
 
     if doNotepad == 1:
         subprocess.run(["notepad.exe"])
 
-    doPaint = random.randint(0, 1)
-
-    if doPaint == 1:
-        subprocess.run(["mspaint.exe"])
-
-    doCommandPrompt = random.randint(0, 1)
-
-    if doCommandPrompt == 1:
-        subprocess.run(["cmd.exe"])
-
-    doMediaPlayer = random.randint(0, 1)
+    doMediaPlayer = random.randint(0, 4)
 
     if doMediaPlayer == 1:
         subprocess.run(["dvdplay.exe"])
 
-    doTaskManager = random.randint(0, 1)
-
-    if doTaskManager == 1:
-        subprocess.run(["LaunchTM.exe"])
-
-    doOSK = random.randint(0, 1)
-
-    if doOSK == 1:
-        subprocess.run(["osk.exe"])
-
-    doSnippingTool = random.randint(0, 1)
+    doSnippingTool = random.randint(0, 4)
 
     if doSnippingTool == 1:
-        subprocess.run(["SnippingTool.exe"])
+        subprocess.run(["snippingtool.exe"])
 
-    doWinver = random.randint(0, 1)
-
-    if doWinver == 1:
-        subprocess.run(["winver.exe"])
-
-    doWordPad = random.randint(0, 1)
+    doWordPad = random.randint(0, 3)
 
     if doWordPad == 1:
         subprocess.run(["write.exe"])
 
-    doTalk = random.randint(0,1)
+    doTalk = random.randint(0,3)
 
     if doTalk == 1:
         tts.say(random.choice(voicemessages))
+        tts.runAndWait()
 
-    if doMove and doScroll and doClick and doDrag and doDrop and doRun and doThrow and doNoClimb and doMoveKeys and doPopup and doPrompt and doExit and doNotepad and doPaint and doCommandPrompt and doMediaPlayer and doTaskManager and doOSK and doSnippingTool and doWinver and doWordPad and doTalk == 0:
+    if doMove and doScroll and doClick and doDrag and doDrop and doRun and doThrow and doNoClimb and doMoveKeys and doPopup and doPrompt and doExit and doNotepad and doMediaPlayer and doSnippingTool and doWordPad and doTalk == 0:
         print("nothing happened, skipping iteration")
         time.sleep(0)
     else:
